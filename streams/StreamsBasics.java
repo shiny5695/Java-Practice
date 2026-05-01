@@ -17,6 +17,12 @@ public class StreamsBasics {
 	
 		List<Integer> list = new ArrayList<>(Arrays.asList(1,2,3,4,5));
 		
+		List<Employee> empList = Arrays.asList(new Employee("Abhishek", "Tech", 10),
+				new Employee("Rani", "Finance", 7000),
+				new Employee("Raj", "Finance", 8000),
+				new Employee("Shiny", "Tech", 20),
+				new Employee("Harsha", "Sales", 300));
+		
 		//print only even numbers using filter and foreach
 		//list.stream().filter(n -> n%2==0).forEach(System.out::println);
 		
@@ -31,6 +37,7 @@ public class StreamsBasics {
 		//list.stream()
 		
 		//print all Employees
+		empList.stream().map(e->e.getName()).forEach(System.out::println);
 		
 		//find all Employees with dept as tech
 		
@@ -75,11 +82,6 @@ public class StreamsBasics {
 		//option 2 :
 		System.out.println(stringlist.stream().max(Comparator.comparing(elem->elem.length())));
 		
-		List<Employee> empList = Arrays.asList(new Employee("Abhishek", "Tech", 10),
-				new Employee("Rani", "Finance", 7000),
-				new Employee("Raj", "Finance", 8000),
-				new Employee("Shiny", "Tech", 20),
-				new Employee("Harsha", "Sales", 300));
 		
 		//find first employee whose salary/ ID is greater than 2
 		Optional<String> opt = empList.stream().filter(e->e.getId()>2).map(e->e.getName()).findFirst();
