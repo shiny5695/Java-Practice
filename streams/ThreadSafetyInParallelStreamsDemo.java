@@ -21,7 +21,7 @@ public class ThreadSafetyInParallelStreamsDemo {
 		
 		//list.stream().map(elem->elem*elem).forEach(num->list2.add(num)); //prints 1000
 		//list.parallelStream().map(elem->elem*elem).forEach(num->list2.add(num)); //varies each time u run
-		//fix for above :
+		//fix for above : use Collectors.toList
 		System.out.println(list.parallelStream().map(elem->elem*elem).collect(Collectors.toList()).size());
 	
 		
