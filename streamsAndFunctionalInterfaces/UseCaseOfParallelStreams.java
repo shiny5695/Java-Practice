@@ -1,4 +1,4 @@
-package streams;
+package streamsAndFunctionalInterfaces;
 
 import java.util.ArrayList;
 import java.util.List;
