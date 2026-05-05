@@ -1,5 +1,12 @@
 package systemDesign;
 
-public class AtmCardRepository {
+public interface AtmCardRepository {
 
+	void insertCard();
+	
+	double checkBalance();
+	
+	double withDrawCash();
+	
+	boolean changePin();
 }
