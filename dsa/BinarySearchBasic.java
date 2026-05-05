@@ -8,13 +8,16 @@ public class BinarySearchBasic {
 		
 		//find the index where k is present 
 		
-		int k = 3;
+		int k = 1;
 		
 		int left = 0; //arr[0];
-		int right = arr.length; //arr[arr.length-1];
+		int right = arr.length-1; //arr[arr.length-1];
 		
-		while(left<right) {
-			int mid = left+right/2;
+		while(left<=right) { //i dnt know why <= insteaad of < 
+			//int mid = left+right/2; // incorrect cz it evaluates to left + (right/2) 
+			//and even if u put it as (left+right)/2 it can cause integer overflow 
+			//use this : 
+			int mid = left + (right - left) / 2;
 			if(k == arr[mid]) {
 				System.out.println("Found at index : " + mid); 
 				return;
@@ -22,11 +25,12 @@ public class BinarySearchBasic {
 				right = mid - 1;
 			} else if(k>arr[mid]) {
 				left = mid +1;
-			} else {
-				System.out.println("not found");
+//			} else {
+//				System.out.println("not found"); // will never come here
+//			}
 			}
 		}
-		
+		System.out.println("Not found");
 
 	}
 
