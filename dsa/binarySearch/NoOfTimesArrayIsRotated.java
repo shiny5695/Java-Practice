@@ -1,4 +1,4 @@
-package dsa;
+package dsa.binarySearch;
 
 public class NoOfTimesArrayIsRotated {
 
