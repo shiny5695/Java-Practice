@@ -52,6 +52,7 @@ public class EvenOddUsing2threads {
  public static void main(String[] args) {
 	 EvenOddUsing2threads printer = new EvenOddUsing2threads (10);
 
+	 
      Thread t1 = new Thread(new Runnable() {
          @Override
          public void run() {
@@ -71,6 +72,7 @@ public class EvenOddUsing2threads {
      t2.setName("Even"); // for clearer verification
 
      t1.start();
+     t1.yield();
      t2.start();
  }
 }
