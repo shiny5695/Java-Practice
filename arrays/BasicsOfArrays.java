@@ -10,7 +10,7 @@ public class BasicsOfArrays {
 		int arrLocal[] = new int[4]; //initialized by 0s
 		
 		//using normal for loop
-		for(int i = 0; i <= arrLocal.length-1;i++) { //i < arrLocal.length means  
+		for(int i = 0; i <= arrLocal.length-1;i++) { //i < arrLocal.length means till the last element , otherwise index out of bounds
 			System.out.println(arrLocal[i]);
 		}
 
