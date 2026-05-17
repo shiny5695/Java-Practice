@@ -49,7 +49,7 @@ public class leftRotateAnArray2Variations {
 		}
 	}
     
-    //TODO
+    //TODO : reverse array by d times ?
     void leftRotateByNOptimal(int[] arr, int n) {
     	
     }
