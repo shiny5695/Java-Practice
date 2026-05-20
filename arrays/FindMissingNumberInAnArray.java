@@ -14,7 +14,8 @@ public class FindMissingNumberInAnArray {
 		//betterUsingHashing(arr1,N);
 //		optimal(arr1,N);
 		//optimal1Sum(arr1,N);
-		optimalXOR(arr1, N);
+		//optimalXOR(arr1, N);
+		mostOptimalXOR(arr1, N);
 
 	}
 
@@ -101,4 +102,26 @@ public class FindMissingNumberInAnArray {
 
 	    System.out.println("Missing number is : " + ans);
 	}
+	
+	private static void mostOptimalXOR(int[] arr1, int N) {
+
+	    int xor1 = 0;
+	    int xor2 = 0;
+
+	    //arr1 = {1,2,4,5};
+	    //N = {1,2,3,4,5}
+	    
+	    // XOR from 1 to N
+	    for(int i = 1; i < N-1; i++) {
+	        xor1 ^= i;
+	        xor2 ^= arr1[i+1];
+	    }
+	    xor1 ^= N;
+
+	    System.out.println("Xor of all numbers : " + xor1);
+	    System.out.println("Xor of all array no : " + xor2);
+	    System.out.println("Xor of all numbers : " + xor1);
+	    System.out.println("Difference is  : " + (xor1-xor2));
+	}
+	
 }
