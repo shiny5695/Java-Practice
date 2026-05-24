@@ -112,6 +112,7 @@ public class TwoSum {
 		
 	}
 	
+	//partially wrong cz m directly sorting the original array and not returning the original indexes
 	private static void optimalUsingGreedyAndSort(int[] arr, int target) {
 		
 		int left = 0; int right = arr.length-1;
