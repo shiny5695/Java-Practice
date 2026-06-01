@@ -21,16 +21,15 @@ public class BestTimeToBuyAndSellStock {
 		System.out.println("bruteforce : " + maxProfit);
 	}
 	
-	static void optimal(int[] arr) {
-		int minPrice = Integer.MAX_VALUE;
-		int maxProfit = 0;
-		for(int i=0; i<arr.length; i++) {
-			if(arr[i] < minPrice) {
-				minPrice = arr[i];
-			} else if(arr[i] - minPrice > maxProfit) {
-				maxProfit = arr[i] - minPrice;
-			}
-		}
-		System.out.println("optimal : " + maxProfit);
+	static void optimal(int[] prices) {
+		 int minPrice = prices[0];
+		    int maxProfit = 0;
+		    for(int i = 1; i < prices.length; i++) {
+		        int profit = prices[i] - minPrice;
+		        maxProfit = Math.max(maxProfit, profit);
+		        minPrice = Math.min(minPrice, prices[i]);
+		    }
+
+		    System.out.println(maxProfit);
 	}
 }
