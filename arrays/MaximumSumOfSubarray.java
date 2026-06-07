@@ -9,6 +9,7 @@ public class MaximumSumOfSubarray {
 		//bruteforceUsingThreeLoops(arr);
 		//better(arr);
 		kadanesAlgo(arr);
+		kadanesAlgoButTrackBeginningAndEndToo(arr);
 	}
 
 	private static void bruteforceUsingThreeLoops(int[] arr) {
@@ -49,11 +50,36 @@ public class MaximumSumOfSubarray {
 		}
 		System.out.println(maxSum);
 		System.out.println("Testing git changes ");
-		System.out.println("Testing git changes ");
-		System.out.println("Testing git changes ");
-		System.out.println("Testing git changes ");
-		System.out.println("Testing git changes ");
-		System.out.println("Testing git changes ");
 	}
 
+	private static void kadanesAlgoButTrackBeginningAndEndToo(int[] arr) {
+	
+
+		// Initialize maxSum to first element to correctly handle all-negative arrays
+		int maxSum = arr[0];
+		int currentSum = 0;
+		int tempStart = 0; // potential start index for the current running subarray
+		int start = 0, end = 0;
+
+		for (int i = 0; i < arr.length; i++) {
+			currentSum += arr[i];
+
+			// Update max and indices when we find a better sum
+			if (currentSum > maxSum) {
+				maxSum = currentSum;
+				start = tempStart;
+				end = i;
+			}
+
+			// If running sum becomes negative, reset it and mark next index as potential start
+			if (currentSum < 0) {
+				currentSum = 0;
+				tempStart = i + 1;
+			}
+		}
+
+		System.out.println(maxSum);
+		System.out.println("start : " + start);
+		System.out.println("end : " + end);
+	}
 }
