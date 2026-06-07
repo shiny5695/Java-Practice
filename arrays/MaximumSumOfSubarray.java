@@ -7,7 +7,7 @@ public class MaximumSumOfSubarray {
 		int[] arr = {-2,-3,4,-1,-2,1,5,-3};
 		
 		//bruteforceUsingThreeLoops(arr);
-		better(arr);
+		//better(arr);
 		kadanesAlgo(arr);
 	}
 
@@ -38,7 +38,22 @@ public class MaximumSumOfSubarray {
 	}
 
 	private static void kadanesAlgo(int[] arr) {
-		
+		int maxSum = Integer.MIN_VALUE;
+		int sum = 0;
+		for(int i = 0; i < arr.length;i++) {
+			sum += arr[i];
+			maxSum = Math.max(maxSum, sum);
+			if(sum < 0) {
+				sum = 0;
+			}
+		}
+		System.out.println(maxSum);
+		System.out.println("Testing git changes ");
+		System.out.println("Testing git changes ");
+		System.out.println("Testing git changes ");
+		System.out.println("Testing git changes ");
+		System.out.println("Testing git changes ");
+		System.out.println("Testing git changes ");
 	}
 
 }
