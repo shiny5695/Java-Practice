@@ -76,6 +76,51 @@ public class ThirdLargestElementInAnArray {
 		
 	}
 	
+	//another approach 
+	static int thirdLargest(int[] arr) {
+        int n = arr.length;
+        
+        // If the array has less than 3 elements, return -1
+        if (n < 3) {
+            return -1;
+        }
+        
+        // Pass 1: Find the first maximum element and remember its index
+        int first = -1;
+        int first_idx = -1;
+        for (int i = 0; i < n; i++) {
+            if (arr[i] > first) {
+                first = arr[i];
+                first_idx = i;
+            }
+        }
+        
+        // Pass 2: Find the second max element by skipping the EXACT index of the first
+        int second = -1;
+        int second_idx = -1;
+        for (int i = 0; i < n; i++) {
+            if (i == first_idx) continue; 
+            
+            if (arr[i] > second) {
+                second = arr[i];
+                second_idx = i;
+            }
+        }
+        
+        // Pass 3: Find the third largest element by skipping the indices of first and second
+        int third = -1;
+        for (int i = 0; i < n; i++) {
+            if (i == first_idx || i == second_idx) continue; 
+            
+            if (arr[i] > third) {
+                third = arr[i];
+            }
+        }
+        
+        // Return the third largest element 
+        return third;
+    }
+	
 	//TC : O(N)
 	//SC : O(1);
 	void optimal(int arr[]) {
